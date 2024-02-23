@@ -38,7 +38,6 @@ clevertap.event.push("Product viewed", {
   //  "Date": new Date()
     });
 });
-    document.getElementById("viewed").addEventListener('click',function(){
     clevertap.notifications.push({
         "titleText":'Would you like to receive Push Notifications?',
         "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
@@ -47,7 +46,6 @@ clevertap.event.push("Product viewed", {
         "okButtonColor":'#f28046',
         "serviceWorkerPath": "/clevertap_sw.js"
     });
-});
    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
