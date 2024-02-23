@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- //   <link rel="manifest" href="manifest.json">
     <script type="text/javascript">
         var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
     // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
@@ -15,29 +14,17 @@
             wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
            var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(wzrk, s);
+           var eventProperties = {
+          "Product id": 1,
+          "Product Name": "CleverTap",
+          Name: "Alok Kumar Dubey",
+          Email: "alok.dubey22@spit.ac.in",
+          "MSG-push": true,
      })();
      // with the exception of one of Identity, Email, or FBID
 // each of the following fields is optional
-
-clevertap.onUserLogin.push({
- "Site": {
-   "Name": "Yash Patil",            // String
-   "Identity": 61026032,              // String or number
-   "Email": "yash@gmail.com",         // Email address of the user
-   "Phone": "+14155551234",           // Phone (with the country code)
-   "Gender": "M",                     // Can be either M or F
-   "DOB": new Date(),                 // Date of Birth. Date object
- }
-})
-document.getElementById("Productviewed").addEventListener('click',function(){
-clevertap.event.push("Product viewed", {
-    "Product id": 1,
-    "Product name": "Clevertap",
-    "Name": "Yash Patil",
-    "Email": "yash.patil22@spit.ac.in",
-  //  "Date": new Date()
-    });
-});
+     clevertap.event.push("Product viewed Event", eventProperties);
+      })();
     clevertap.notifications.push({
         "titleText":'Would you like to receive Push Notifications?',
         "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
@@ -118,7 +105,8 @@ clevertap.event.push("Product viewed", {
         <a href="#">Contact</a>
     </nav>
     <section>
-        <button onclick="alert('Button clicked!')" id="viewed">Click Me</button>
+        <button id="script">Click Me</button>
+     
         <h2>About Us</h2>
         <p>This is a simple website created with HTML.</p>
         <button>Learn More</button>
@@ -127,5 +115,10 @@ clevertap.event.push("Product viewed", {
     <footer>
         <p>&copy; 2024 My Simple Website. All rights reserved.</p>
     </footer>
+ <script>
+      document.getElementById("script").addEventListener("click", function () {
+        alert("Button clicked!");
+      });
+    </script>
 </body>
 </html>
